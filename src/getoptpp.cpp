@@ -23,6 +23,8 @@
 
 namespace getoptpp {
 
+const string PRESENT = "<PRESENT>";
+
 // ----------------------
 
 bool parse_option_string(vector<option> &vopt, const char *opt_str)
@@ -218,7 +220,7 @@ bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 		    return false;
 		};
 		
-		opt->val = "1";
+		opt->val = PRESENT;
 		continue;
 	    };
 	    
@@ -235,7 +237,10 @@ bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 	    if(!val.empty())
 		opt->val = val;
 	    else
+	    {
+		opt->val = PRESENT;
 		wait_optional = true;
+	    };
 	
 	    continue;
 	}
@@ -257,7 +262,7 @@ bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 		
 		if(opt->flag == NO)
 		{
-		    opt->val = "1";
+		    opt->val = PRESENT;
 		    continue;
 		};
 		
@@ -274,7 +279,10 @@ bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 		if(*p)
 		    opt->val = p;
 		else
+		{
+		    opt->val = PRESENT;
 		    wait_optional = true;
+		};
 		
 	    };
 	};

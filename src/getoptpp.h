@@ -26,6 +26,7 @@ namespace getoptpp {
 
 using namespace std;
 
+extern const string PRESENT;
 // ----------------------
 
 // c[clong]::

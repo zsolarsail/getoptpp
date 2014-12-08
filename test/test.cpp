@@ -11,7 +11,7 @@ using namespace getoptpp;
 int main(int argc, char **argv)
 {
 
-    const char *opt_str = "h[help] v[loglevel]:";
+    const char *opt_str = "h[help] v[loglevel]: s[sss]::";
 
     parser R(opt_str, argc, argv);
 
@@ -24,6 +24,7 @@ int main(int argc, char **argv)
     auto &r = R();
     printf("h: %s\n", r['h'].c_str());
     printf("v: %s\n", r['v'].c_str());
+    printf("s: %s\n", r['s'].c_str());
     printf("\n");
 
     for(auto &x: r.argv)
