@@ -1,0 +1,29 @@
+
+AC_PREREQ([2.63])
+AC_INIT([getoptpp],[0.1])
+AC_CONFIG_SRCDIR([src/getoptpp.cpp])
+AC_CANONICAL_BUILD
+AC_CANONICAL_HOST
+AM_INIT_AUTOMAKE
+
+AC_CONFIG_HEADERS([config.h])
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_INSTALL
+AC_PROG_LIBTOOL
+
+CXXFL="-Wall -Wextra -std=gnu++11"
+AC_SUBST([AM_CXXFLAGS], $CXXFL)
+
+CFL="-Wall -Wextra"
+AC_SUBST([AM_CFLAGS], $CFL)
+
+
+AC_CONFIG_FILES(
+    Makefile
+    src/Makefile
+    test/Makefile
+    )
+
+AC_OUTPUT
