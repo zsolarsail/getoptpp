@@ -138,7 +138,7 @@ bool parse_result::set_vopt(vector<option> &_vopt)
 
 bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 {
-    const char **__argv = (const char**)_argv;
+    const char **_xargv = (const char**)_argv;
     erase();
     
     if(!res.set_vopt(vopt))
@@ -153,7 +153,7 @@ bool parser::parse(vector<option> &vopt, int _argc, const void*_argv)
 
     for(int i=0; i<_argc; i++)
     {
-	const char *a = __argv[i];
+	const char *a = _xargv[i];
 	p = a;
 	
 	if(wait_val || wait_optional)
