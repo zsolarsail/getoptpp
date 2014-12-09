@@ -100,8 +100,14 @@ public:
     
     const string& operator[](const string& long_name) const { return long_opt(long_name); };
 
+    long as_int(char short_name, long def_val=-1) const { return to_int(short_opt(short_name), def_val); };
+    long as_int(const string &long_name, long def_val=-1) const { return to_int(long_opt(long_name), def_val); };
+
+    long to_int(const string &str, long def_val=-1) const;
+
 private:
     bool set_vopt(vector<option> &_vopt);
+    
     
     void erase(void);
 };

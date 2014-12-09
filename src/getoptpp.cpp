@@ -95,6 +95,20 @@ bool parse_option_string(vector<option> &vopt, const char *opt_str)
 
 // ----------------------
 
+long parse_result::to_int(const string &str, long def_val) const
+{
+    long ret = def_val;
+    
+    try {
+	ret = std::stol(str);
+    }
+    catch(...) {
+	ret = def_val;
+    };
+    
+    return ret;
+};
+
 void parse_result::erase(void)
 {
     opt.clear();
