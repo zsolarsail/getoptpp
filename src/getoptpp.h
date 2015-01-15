@@ -105,6 +105,9 @@ public:
 
     long to_int(const string &str, long def_val=-1) const;
 
+    bool present(char short_name) const { return short_opt(short_name) == PRESENT; };
+    bool present(const string& long_name) const { return long_opt(long_name) == PRESENT; };
+    
 private:
     bool set_vopt(vector<option> &_vopt);
     
