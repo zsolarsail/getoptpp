@@ -109,6 +109,21 @@ long parse_result::to_int(const string &str, long def_val) const
     return ret;
 };
 
+double parse_result::to_float(const string &str, double def_val) const
+{
+    double ret = def_val;
+    
+    try {
+	ret = std::stod(str);
+    }
+    catch(...) {
+	ret = def_val;
+    };
+    
+    return ret;
+};
+
+
 void parse_result::erase(void)
 {
     opt.clear();

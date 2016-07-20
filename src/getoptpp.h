@@ -103,7 +103,12 @@ public:
     long as_int(char short_name, long def_val=-1) const { return to_int(short_opt(short_name), def_val); };
     long as_int(const string &long_name, long def_val=-1) const { return to_int(long_opt(long_name), def_val); };
 
+    double as_float(char short_name, long def_val=0) const { return to_float(short_opt(short_name), def_val); };
+    double as_float(const string &long_name, long def_val=0) const { return to_float(long_opt(long_name), def_val); };
+
+
     long to_int(const string &str, long def_val=-1) const;
+    double to_float(const string &str, double def_val=0) const;
 
     bool present(char short_name) const { return short_opt(short_name) == PRESENT; };
     bool present(const string& long_name) const { return long_opt(long_name) == PRESENT; };
