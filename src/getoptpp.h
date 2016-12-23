@@ -91,8 +91,6 @@ public:
     
     const string& operator[](char short_name) const { return short_opt(short_name); };
 
-    bool is(char short_name) const { return short_opt(short_name) == PRESENT; };
-
     const string& long_opt(const string& long_name) const
     {
 	auto j = ml.find(long_name);
